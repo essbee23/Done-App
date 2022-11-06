@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import AddTodoForm from './AddTodoForm';
 import TodoList from './TodoList';
-import EditForm from "./EditForm";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import FavoritesPage from './FavePage/FavoritesPage';
+import Header from './Header';
 
 
-// Function to preserve list upon refresh. Works with local storage.
+// Function to preserve list upon refresh. Works with local storage.--sb
 
 const useSemiPersistentState = () => {
   
@@ -20,75 +21,32 @@ const useSemiPersistentState = () => {
 };
 
 function App() {
-
-  const [todoList, setTodoList] = useSemiPersistentState();
-  const [isEditing, setIsEditing] = useState(false);
-  const [currentTodo, setCurrentTodo] = useState({});
-
-  const addTodo = (newTodo) => {
-    setTodoList([...todoList, newTodo])
-  };
-
-  const removeTodo = (id) => {
-    const newTodoList = todoList.filter((todo) =>
-      id !== todo.id);
-    setTodoList(newTodoList)
-  };
-
-  const handleAddInputChange = (e) => {
-    setTodoList(e.target.value);
-  };
-
-  const handleEditInputChange = (e) => {
-    setCurrentTodo({ ...currentTodo, title: e.target.value });
-    console.log(currentTodo);
-  };
-
-
-  const handleEditFormSubmit = (e) => {
-    e.preventDefault();
-    handleUpdateTodo(currentTodo.title, currentTodo);
-  };
-  
-  const handleUpdateTodo = (todoTitle, updatedTodo) => {
-    const updatedItem = todoTitle.map((todo) => {
-      return todo.title === todo.title ? updatedTodo : todo;
-    });
-    setIsEditing(false);
-    setTodoList(updatedItem);
-  };
-
-  const handleEditClick = (todoTitle) => {
-    setIsEditing(true);
-    setCurrentTodo({ ...todoTitle });
-  };
-
-
   return (
-    <>
-      <h1>Todo List Title</h1>
+      <BrowserRouter>
+        <Routes>
+        
+        {/* home */}
+          <Route path="/" element={
+  <>        
+            <Header />
+            <h1>Todo List Title</h1>
+            <TodoList useSemiPersistentState={useSemiPersistentState}/>
+  </>     
+        }></Route>
 
-      {isEditing ? (
-        <EditForm
-          currentTodo={currentTodo}
-          setIsEditing={setIsEditing}
-          onEditInputChange={handleEditInputChange}
-          onEditFormSubmit={handleEditFormSubmit}
-        />
-      ) : (
-          <AddTodoForm
-            onAddTodo={addTodo}
-            onAddInputChange={handleAddInputChange}
-          />
-      )}
-
-        <TodoList
-          todoList={todoList}
-          onRemoveTodo={removeTodo}
-          onEditClick={handleEditClick}
-        />
-      
-    </>
+        
+        {/* FavePage */}
+          <Route path="/Favorites" element={
+  <>
+            <Header />
+            <h1>Favorites</h1>
+            <FavoritesPage useSemiPersistentState={useSemiPersistentState} />
+  </>
+        }></Route>
+        
+        </Routes>
+      </BrowserRouter>
+  
       );
 };
 export default App;

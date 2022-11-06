@@ -1,19 +1,17 @@
-import React, { useState } from "react";
-import TodoList from "./TodoList";
-import AddTodoForm from "./AddTodoForm";
-import InputWithLabel from "./InputWithLabel";
+import React from "react";
 
-//Function creates list item with remove button. Add checkbox, edit, favorite here.
 
-const TodoListItem = ({ todo, onRemoveTodo, onEditClick}) => {
-  console.log(todo);
+//Function creates list item with checkbox, todo.title, star, edit, remove.--sb
+
+const TodoListItem = ({ todo, onRemoveTodo, handleCheck, handleStar }) => {
   return (
       
     <li key={todo.id}>
-      
-      {todo.title}
 
-      <button type="button" onClick={() => onEditClick(todo.Title)}>Edit</button>
+      <input value={todo.title} type="checkbox" onChange={handleCheck} />
+      {todo.title}
+      <button type="button" onClick={handleStar}>Favorite</button>
+      <button type="button" >Edit</button>
       <button type="button" onClick={() => onRemoveTodo(todo.id)}>Remove Button</button>
       
     </li>       
