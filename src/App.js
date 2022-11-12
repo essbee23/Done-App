@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import TodoList from './TodoList';
+import TodoList from './mainList/TodoList';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import FavoritesPage from './FavePage/FavoritesPage';
+import FavoritesPage from './favePage/FavoritesPage';
 import Header from './Header';
-import TabTodo from "./TabTodo"
+import TabTodo from "./tabs/TabTodo"
 
 
 // Function to preserve list upon refresh. Works with local storage.--sb

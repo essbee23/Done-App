@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-
+import style from "./TabTodo.module.css"
 
 function TabTodo(){
-// This is the parent's state hook. It says that tab will be updated with a title and assigned an ID when a setTab has been used to receive that information.
+// This is the parent's state hook. It says that tab will be updated with a title and assigned an ID when a setTab has been used to receive that information. Not clear on id:1 (from stack overflow).
     const [tabs, setTabs] = useState([{ title: "Title", id: 1 }]);
 
 // This is a child. It will receive information about a newly created list and change it's information to a string then save it to local storage.  
@@ -45,7 +44,7 @@ function TabTodo(){
 // 
     return (
         <>
-            <button onClick={() => addNewTab()}>
+            <button className={style.addNewTab} onClick={() => addNewTab()}>
                 Create New Tab
             </button>
             <Tabs forceRenderTabPanel={true}>
