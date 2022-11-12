@@ -5,7 +5,7 @@ import TodoListItem from "./TodoListItem"
 
 //function to assemble and dissemble list: checkbox, title, fave, edit, trash
 
-const TodoList = ({ useSemiPersistentState, todoTitle }) => {
+const TodoList = ({ useSemiPersistentState }) => {
 
   const [todoList, setTodoList] = useSemiPersistentState();
   const [checked, setChecked] = useState([]);

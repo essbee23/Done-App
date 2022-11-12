@@ -11,6 +11,7 @@ const Header = () => {
         <ol> 
         <Link to="/" type="button" style={{ marginRight: 10 }}>Home</Link> 
         <Link to="/favorites" type="button" style={{ marginRight: 10 }}>Favorites</Link> 
+        <Link to="/CreateNewTab" type="button" style={{marginRight: 10 }}>Create New Tab</Link>
         </ol>           
       </nav>
     );
