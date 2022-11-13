@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import AddTodoLabel from './AddTodoLabel';
+import style from "./mainList.module.css"
+import { FaPlusCircle } from "react-icons/fa"
 
 
 // This function assembles form with input field--sb 
@@ -25,7 +27,7 @@ const AddTodoForm = ({ addTodo }) => {
                 handleTitleChange={handleTitleChange}>
                 Title
             </AddTodoLabel>
-            <button type="submit">Add</button>
+            <button className={style.addButton} type="submit"><FaPlusCircle /></button>
         </form>
     );
 };

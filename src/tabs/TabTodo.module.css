@@ -1,4 +1,13 @@
 .addNewTab{
-    background-color:cornsilk;
+    background-color:cornsilk;    
 }
 
+.tabList{
+    list-style: none;
+}
+
+.tab{
+    float: left;
+    margin-left: 5px;
+    border: solid 2px blueviolet;
+}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import style from "./TabTodo.module.css"
+import { FaTrashAlt } from "react-icons/fa"
+import { FaPlusCircle } from "react-icons/fa"
 
 function TabTodo(){
 // This is the parent's state hook. It says that tab will be updated with a title and assigned an ID when a setTab has been used to receive that information. Not clear on id:1 (from stack overflow).
@@ -45,14 +47,14 @@ function TabTodo(){
     return (
         <>
             <button className={style.addNewTab} onClick={() => addNewTab()}>
-                Create New Tab
+            <FaPlusCircle />
             </button>
             <Tabs forceRenderTabPanel={true}>
-                <TabList>
+                <TabList className={style.tabList}>
                 {tabs.map((tab, index) => (
-                <Tab key={tab.id}>
+                    <Tab className={style.tab} key={tab.id}>
                 {tab.title}
-                <button onClick={() => closeTab(index)}>X</button>
+                <button onClick={() => closeTab(index)}><FaTrashAlt /></button>
                 </Tab>
                 ))}
                 </TabList>

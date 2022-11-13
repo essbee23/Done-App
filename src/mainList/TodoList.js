@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import AddTodoForm from "./AddTodoForm";
 import TodoListItem from "./TodoListItem"
+import style from "./mainList.module.css"
+
 
 
 //function to assemble and dissemble list: checkbox, title, fave, edit, trash
@@ -40,7 +42,7 @@ const handleCheck = (e) => {
     <>
       <AddTodoForm addTodo={addTodo}/>
       
-    <ul>
+    <ul className={style.listBox}>
         {todoList.map((todo) => (
           <TodoListItem
             key={todo.id}

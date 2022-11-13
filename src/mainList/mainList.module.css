@@ -1,0 +1,33 @@
+.listItem{
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    display: flex;
+    word-break: break-all;
+    /* border: 2px solid black; */
+    display:block;
+    height:fit-content;
+    width:max-content;
+}
+
+.checkBox:active{
+    transform: translateY(2px);
+    font-weight: bolder;
+    border-radius: 50%;
+    box-shadow: 2px 2px gray;
+}
+button{
+    border: none;
+    margin-left: 10px;    
+}
+
+.listBox{
+    text-align: left;
+    list-style: none;
+
+}
+.addButton:active {
+    transform: translateY(2px);
+    font-weight: bolder;
+    border-radius: 50%;
+    box-shadow: 2px 2px gray;
+}

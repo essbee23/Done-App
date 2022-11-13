@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FavoritesPage from './favePage/FavoritesPage';
 import Header from './Header';
 import TabTodo from "./tabs/TabTodo"
+import style from "./app.module.css"
 
 
 // Function to preserve list upon refresh. Works with local storage.--sb
@@ -24,7 +25,7 @@ const useSemiPersistentState = () => {
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Header className={style.header} />
         <Routes>
         
         {/* home */}
