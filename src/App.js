@@ -31,8 +31,8 @@ function App() {
         {/* home */}
           <Route path="/" element={
   <>        
-            <h1>Todo List Title</h1>
-            <TodoList useSemiPersistentState={useSemiPersistentState}/>
+            <h1 className="mainList">Todo List Title</h1>
+            <TodoList useSemiPersistentState={useSemiPersistentState} />
   </>     
         }></Route>
 

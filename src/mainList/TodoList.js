@@ -5,6 +5,8 @@ import style from "./mainList.module.css"
 
 
 
+
+
 //function to assemble and dissemble list: checkbox, title, fave, edit, trash
 
 const TodoList = ({ useSemiPersistentState }) => {
@@ -41,7 +43,6 @@ const handleCheck = (e) => {
   return (
     <>
       <AddTodoForm addTodo={addTodo}/>
-      
     <ul className={style.listBox}>
         {todoList.map((todo) => (
           <TodoListItem

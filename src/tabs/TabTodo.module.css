@@ -1,5 +1,7 @@
 .addNewTab{
-    background-color:cornsilk;    
+    background-color:cornsilk;
+    border:solid 2px black;
+    float: left;    
 }
 
 .tabList{
