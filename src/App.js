@@ -3,7 +3,7 @@ import TodoList from './mainList/TodoList';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FavoritesPage from './favePage/FavoritesPage';
 import Header from './Header';
-import TabTodo from "./tabs/TabTodo"
+import CreateTab from "./tabs/CreateTab"
 import style from "./app.module.css"
 
 
@@ -49,7 +49,7 @@ function App() {
         <Route path="/CreateNewTab" element={
   <>
             <h1>Create New Tab</h1>
-            <TabTodo useSemiPersistentState={useSemiPersistentState}/>
+            <CreateTab useSemiPersistentState={useSemiPersistentState}/>
   </>
         }></Route>
         
