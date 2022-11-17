@@ -5,7 +5,8 @@ import { FaPlusSquare, FaTrashAlt } from "react-icons/fa"
 
 
 
-function CreateTab(){
+
+function CreateTab(useSemiPersistentState){
 // This is the parent's state hook. It says that tab will be updated with a title and assigned an ID when a setTab has been used to receive that information. Not clear on id:1 (from stack overflow).
     const [tabs, setTabs] = useState([{ title: "Title", id: 1 }]);
 
@@ -30,7 +31,7 @@ function CreateTab(){
         saveTabsData(newTab)
     }
 
-// This is function that will place the TodoList component to addNewTab function. 
+ 
     
 // This function deletes a tab. The splice method will be applied to the tab that is to be deleted and that information is passed to setTabs and saveTabsData so they may update the array in local storage which will update the parent.
     const closeTab = (index) => {
@@ -46,7 +47,7 @@ function CreateTab(){
         saveTabsData([...tabs])
     }
 
-
+// This function should assemble a todolist. 
 // 
     return (
         <>
@@ -70,6 +71,7 @@ function CreateTab(){
                 </TabPanel>
                 ))}
             </Tabs>
+            
         </>
     )
 
