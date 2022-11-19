@@ -40,9 +40,10 @@ function CreateTab(useSemiPersistentState){
         saveTabsData([...tabs])
     }
 
-// This function changes the title of the tab. It uses and event handler such that, when the event happens, a tab title will be the value that's received and that information will be sent to setTabs and saveTabsData so that they may update the parent****WONKY****
+// This function changes the title of the tab. It uses and event handler such that, when the event happens, a tab title will be the value that's received and that information will be sent to setTabs and saveTabsData so that they may update the parent****WONKY**** change something in setTabs
+    
     const changeTabName = (e, tab) => {
-        tab.title= e.target.value
+        tab.title = e.target.value;
         setTabs([...tabs]) 
         saveTabsData([...tabs])
     }
@@ -51,7 +52,7 @@ function CreateTab(useSemiPersistentState){
 // 
     return (
         <>
-            <button className={style.addNewTab} onClick={() => addNewTab()}>New Tab
+            <button className={style.addNewTab} onClick={() => addNewTab()}>New List
             <FaPlusSquare />
             </button>
             <Tabs forceRenderTabPanel={true}>
