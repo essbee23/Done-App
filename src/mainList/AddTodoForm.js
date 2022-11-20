@@ -21,7 +21,7 @@ const AddTodoForm = ({ addTodo }) => {
     };
 
     return (
-        <form onSubmit={handleAddTodo}>
+        <form onSubmit={handleAddTodo} autoComplete="on">
             <AddTodoLabel
                 todoTitle={todoTitle}
                 handleTitleChange={handleTitleChange}>

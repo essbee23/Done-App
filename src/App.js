@@ -37,7 +37,7 @@ function App() {
         
           <Route path="/mainList" element={
   <>        
-            <h1 className="mainList">Todo List Title</h1>
+            <h1 className="mainList">Today's List</h1>
             <TodoList useSemiPersistentState={useSemiPersistentState} />
   </>     
         }></Route>
@@ -47,6 +47,7 @@ function App() {
   <>
             <h1>Favorites</h1>
             <FavoritesPage useSemiPersistentState={useSemiPersistentState} />
+            <TodoList useSemiPersistentState={useSemiPersistentState} />
   </>
         }></Route>
 
@@ -54,7 +55,8 @@ function App() {
         <Route path="/CreateNewTab" element={
   <>
             <h1>Create New Tab</h1>
-            <CreateTab useSemiPersistentState={useSemiPersistentState}/>
+            <CreateTab useSemiPersistentState={useSemiPersistentState} />
+            <TodoList useSemiPersistentState={useSemiPersistentState} />
   </>
         }></Route>
         
