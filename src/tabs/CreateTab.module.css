@@ -1,0 +1,15 @@
+.addNewTab{
+    background-color:cornsilk;
+    border:solid 2px black;
+    float: left;    
+}
+
+.tabList{
+    list-style: none;
+}
+
+.tab{
+    float: left;
+    margin-left: 5px;
+    border: solid 2px blueviolet;
+}

@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import TodoList from './TodoList';
+import TodoList from './mainList/TodoList';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import FavoritesPage from './FavePage/FavoritesPage';
-import Header from './Header';
-import TabTodo from "./TabTodo"
+import FavoritesPage from './favePage/FavoritesPage';
+import Header from './homePage/Header';
+import CreateTab from "./tabs/CreateTab"
+import style from "./app.module.css"
+import Welcome from './homePage/welcome';
 
 
 // Function to preserve list upon refresh. Works with local storage.--sb
@@ -24,23 +26,28 @@ const useSemiPersistentState = () => {
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Header className={style.header} />
         <Routes>
         
         {/* home */}
           <Route path="/" element={
-  <>        
-            <h1>Todo List Title</h1>
-            <TodoList useSemiPersistentState={useSemiPersistentState}/>
-  </>     
+          <Welcome />    
         }></Route>
 
+        
+          <Route path="/mainList" element={
+  <>        
+            <h1 className="mainList">Today's List</h1>
+            <TodoList useSemiPersistentState={useSemiPersistentState} />
+  </>     
+        }></Route>
         
         {/* FavePage */}
           <Route path="/Favorites" element={
   <>
             <h1>Favorites</h1>
             <FavoritesPage useSemiPersistentState={useSemiPersistentState} />
+            <TodoList useSemiPersistentState={useSemiPersistentState} />
   </>
         }></Route>
 
@@ -48,7 +55,8 @@ function App() {
         <Route path="/CreateNewTab" element={
   <>
             <h1>Create New Tab</h1>
-            <TabTodo useSemiPersistentState={useSemiPersistentState}/>
+            <CreateTab useSemiPersistentState={useSemiPersistentState} />
+            <TodoList useSemiPersistentState={useSemiPersistentState} />
   </>
         }></Route>
         
